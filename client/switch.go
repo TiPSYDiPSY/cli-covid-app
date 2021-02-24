@@ -62,7 +62,7 @@ func (s Switch) confirmed() func(string, []CountryData) error {
 		}
 		var data []float64
 		for _, countryData := range countriesData {
-			data = append(data, countryData.Confirmed/10000)
+			data = append(data, countryData.Confirmed/1000)
 		}
 
 		graph := asciigraph.Plot(data)
@@ -79,7 +79,7 @@ func (s Switch) recovered() func(string, []CountryData) error {
 
 		var data []float64
 		for _, countryData := range countriesData {
-			data = append(data, countryData.Recovered/10000)
+			data = append(data, countryData.Recovered/1000)
 		}
 
 		graph := asciigraph.Plot(data)
@@ -95,7 +95,7 @@ func (s Switch) death() func(string, []CountryData) error {
 		}
 		var data []float64
 		for _, countryData := range countriesData {
-			data = append(data, countryData.Deaths/10000)
+			data = append(data, countryData.Deaths/1000)
 		}
 
 		graph := asciigraph.Plot(data)
@@ -111,7 +111,7 @@ func (s Switch) active() func(string, []CountryData) error {
 		}
 		var data []float64
 		for _, countryData := range countriesData {
-			data = append(data, countryData.Active/10000)
+			data = append(data, countryData.Active/1000)
 		}
 
 		graph := asciigraph.Plot(data)

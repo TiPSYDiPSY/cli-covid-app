@@ -37,7 +37,7 @@ func (c HTTPCClient) GetData() ([]CountryData, error) {
 		return nil, fmt.Errorf("unable to get data: %v", err)
 	}
 
-	if res.Status != http.StatusText(http.StatusOK) {
+	if res.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("service currenty unavailable : %v", res.Status)
 	}
 
